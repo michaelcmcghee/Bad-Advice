@@ -1,0 +1,26 @@
+{
+  "name": "Bad Advice",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "This extension is terrible!  It replaces instances of never with always, shouldn't with should, and don't with do!",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["src/bg/background.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  }
+}
